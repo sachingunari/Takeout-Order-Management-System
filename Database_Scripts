@@ -1,0 +1,20 @@
+CREATE DATABASE TakeoutOrderSchema;
+
+
+Users table
+CREATE TABLE `TakeoutOrderSchema`.`Users` ( `UID` INT NOT NULL , `Name` VARCHAR NOT NULL , `Email` VARCHAR NULL , `Password` VARCHAR NOT NULL , `Acceslevel` INT NOT NULL DEFAULT '1' ) ENGINE = InnoDB;
+
+Items table
+CREATE TABLE `TakeoutOrderSchema`.`Items` ( `I_ID` INT(5) NOT NULL , `ItemName` TEXT NOT NULL , `C_ID` INT(5) NOT NULL , `CookingTime` INT(2) NOT NULL , `Unit_Price` INT(3) NOT NULL , `Image_URL` VARCHAR(100) NOT NULL , `Calories` INT(4) NOT NULL , `Timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`I_ID`(5))) ENGINE = InnoDB COMMENT = 'contains information for the food items for a takeout ';
+
+Orders table
+CREATE TABLE `takeoutorderschema`.`Orders` ( `O_ID` INT(10) NOT NULL , `U_ID` INT(5) NOT NULL , `Timestamp` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`O_ID`)) ENGINE = InnoDB;
+
+OrderDetails table
+CREATE TABLE `takeoutorderschema`.`OrderDetails` ( `Order_ID` INT(10) NOT NULL , `Item_ID` INT(5) NOT NULL , `Item_qty` INT(5) NOT NULL ) ENGINE = InnoDB;
+
+Category table
+CREATE TABLE `takeoutorderschema`.`Category` ( `Category_ID` INT(5) NOT NULL , `Category_Name` TEXT NOT NULL , PRIMARY KEY (`Category_ID`)) ENGINE = InnoDB;
+
+LoggingInfo Table
+CREATE TABLE `takeoutorderschema`.`LoggingInfo` ( `U_ID` INT(5) NOT NULL , `LoggingInfo` VARCHAR(100) NOT NULL , `Timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`U_ID`)) ENGINE = InnoDB;
