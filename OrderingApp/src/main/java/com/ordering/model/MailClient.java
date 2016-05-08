@@ -20,8 +20,8 @@ public class MailClient {
 
 	      // Sender's email ID needs to be mentioned
 	      String from = sender;//change accordingly
-	      final String username = "sachingunari";//change accordingly
-	      final String password = "hpprotego";//change accordingly
+	      final String username = "";//change accordingly
+	      final String password = "";//change accordingly
 
 	      // Assuming you are sending email through relay.jangosmtp.net
 	      String host = "relay.jangosmtp.net";
